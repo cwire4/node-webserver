@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-
+var player = require('play-sound')(opts = {})
 var app = express();
 
 hbs.registerPartials(__dirname + "/views/partials");
@@ -48,9 +48,12 @@ hbs.registerHelper('screamIt', (text) => {
  */
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express</h1>');
+  player.play('happybirthday.mp3', function(err){
+  if (err) throw err
+})
   res.render('home.hbs', {
     pageTitle: 'Home Page',
-    welcomeMessage: "Welcome to my website",
+    welcomeMessage: "Happy birthday homeskillet!",
   });
 });
 
