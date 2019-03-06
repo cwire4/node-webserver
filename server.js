@@ -54,6 +54,7 @@ app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMessage: "Happy birthday homeskillet!",
+    // also https://www.youtube.com/watch?v=wOTBWlt0-Y0
   });
 });
 
